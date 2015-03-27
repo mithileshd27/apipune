@@ -1,7 +1,7 @@
 var restify = require("restify");
 var url = require('url');
 var databaseUrl = "mongodb://heroku_app34304226:imubt5thg6tbbmkgidcn9klco4@ds047901.mongolab.com:47901/heroku_app34304226";
-var databaseUrl = "puneio";
+//var databaseUrl = "puneio";
 var sensors = ["temp", "light", "humid", "accel", "pir"];
 var db = require("mongojs").connect(databaseUrl, sensors);
 var server = restify.createServer({name: 'pune.io'});

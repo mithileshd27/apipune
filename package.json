@@ -1,0 +1,22 @@
+{
+  "name": "pune.io",
+  "main": "pune-io.js",
+  "description" : "Server for data logging and retreiving",
+  "scripts": {
+    "start": "node pune-io.js"
+  },
+  "dependencies": {
+    "express": "~4.11.x",
+    "restify": "2.8.4",
+    "mongojs" : "0.18.0",
+    "assert-plus" : "~0.1.x",
+    "verror" : "~1.4.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mithileshd27/puneio.git"
+  }
+}

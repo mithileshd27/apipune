@@ -25,7 +25,7 @@ server.post('/sensors/temp', function (req, res, next) {
     res.end();
   }
   else {
-    db.temp.save({ value: req.params.value, unit: "C", devid: req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon}, function(err, saved) {
+    db.temp.save({ value: req.params.value, unit: "C", devid: req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if(err || !saved) {
         console.log("Value Not Stored");
         res.send(500);
@@ -52,7 +52,7 @@ server.post('/sensors/humid', function (req, res, next) {
     res.end();
   }
   else {
-    db.humid.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon}, function(err, saved) {
+    db.humid.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if( err || !saved ) {
         console.log("Value Not Stored");
         res.send(500);
@@ -78,7 +78,7 @@ server.post('/sensors/light', function (req, res, next) {
     res.end();
   }
   else {
-    db.light.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon}, function(err, saved) {
+    db.light.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if( err || !saved ) {
         console.log("Value Not Stored");
         res.send(500);
@@ -104,7 +104,7 @@ server.post('/sensors/accel', function (req, res, next) {
     res.end();
   }
   else {
-    db.accel.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon}, function(err, saved) {
+    db.accel.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if( err || !saved ) {
         console.log("Value Not Stored");
         res.send(500);
@@ -130,7 +130,7 @@ server.post('/sensors/pir', function (req, res, next) {
     res.end();
   }
   else {
-    db.pir.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon}, function(err, saved) {
+    db.pir.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if( err || !saved ) {
         console.log("Value Not Stored");
         res.send(500);

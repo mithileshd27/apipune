@@ -104,7 +104,7 @@ server.post('/sensors/accel', function (req, res, next) {
     res.end();
   }
   else {
-    db.accel.save({value : req.params.value, devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
+    db.accel.save({xaxis : req.params.ax, yaxis : req.params.ay, zaxis : req.params.az,  devid : req.params.dev_id, geo_lat: req.params.lat, geo_long:req.params.lon, time_stamp:req.params.time}, function(err, saved) {
       if( err || !saved ) {
         console.log("Value Not Stored");
         res.send(500);
